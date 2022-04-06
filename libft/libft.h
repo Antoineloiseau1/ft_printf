@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 09:44:30 by anloisea          #+#    #+#             */
-/*   Updated: 2022/04/06 12:21:42 by antoine          ###   ########.fr       */
+/*   Updated: 2022/04/06 18:55:12 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,14 +66,14 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-int     ft_putchar_len(char c);
-int     ft_putstrlen(char *str);
-void    ft_putchar(char c);
-void    ft_putnbr(int n);
-void    ft_putstr(char *str);
-void    ft_putunbr(unsigned int n);
-int     ft_putnbr_len(int n);
-int     ft_putunbrlen(unsigned int n);
-int 	ft_putnbr_hexax_len(int n, const char *base);
+int		ft_putchar_len(char c);
+int		ft_putstrlen(char *str);
+void	ft_putchar(char c);
+void	ft_putnbr(int n);
+void	ft_putstr(char *str);
+void	ft_putunbr(unsigned int n);
+int		ft_putnbr_len(int n);
+int		ft_putunbrlen(unsigned int n);
+int		ft_putnbr_hexax_len(unsigned int n, char c);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_cases.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 17:17:21 by anloisea          #+#    #+#             */
-/*   Updated: 2022/04/06 12:22:24 by antoine          ###   ########.fr       */
+/*   Updated: 2022/04/06 19:02:42 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int	ft_cases(char c, va_list args)
 	if (c == 'u')
 		len = ft_putunbrlen(va_arg(args, unsigned int)) + 1;
 	if (c == 'x')
-	//	len = ft_putnbr_hexax_len(va_arg(args, int), "0123456789abcdef");
+		len = ft_putnbr_hexax_len(va_arg(args, unsigned int), c);
 	if (c == 'X')
-		va_arg(args, int);
+		len = ft_putnbr_hexax_len(va_arg(args, unsigned int), c);
 	if (c == '%')
 		len = ft_putchar_len('%');
 	return (len);
