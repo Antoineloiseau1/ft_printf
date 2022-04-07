@@ -6,7 +6,7 @@
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 17:17:21 by anloisea          #+#    #+#             */
-/*   Updated: 2022/04/06 19:02:42 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/04/07 18:59:59 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,18 @@ int	ft_cases(char c, va_list args)
 	if (c == 'c')
 		len = ft_putchar_len(va_arg(args, int));
 	if (c == 's')
-		len = ft_putstrlen(va_arg(args, char *));
+		len = ft_putstr_len(va_arg(args, char *));
 	if (c == 'p')
-		va_arg(args, void *);
+	{
+		len += ft_putstr_len("0x");
+		len += ft_putmem_len(va_arg(args, unsigned long int));
+	}
 	if (c == 'd' || c == 'i')
 		len = ft_putnbr_len(va_arg(args, int)) + 1;
 	if (c == 'u')
-		len = ft_putunbrlen(va_arg(args, unsigned int)) + 1;
-	if (c == 'x')
-		len = ft_putnbr_hexax_len(va_arg(args, unsigned int), c);
-	if (c == 'X')
-		len = ft_putnbr_hexax_len(va_arg(args, unsigned int), c);
+		len = ft_putunbr_len(va_arg(args, unsigned int)) + 1;
+	if (c == 'x' || c == 'X')
+		len = ft_puthexa_len(va_arg(args, unsigned int), c);
 	if (c == '%')
 		len = ft_putchar_len('%');
 	return (len);

@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_spec.c                                    :+:      :+:    :+:   */
+/*   ft_putunbrlen.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/03 17:06:19 by anloisea          #+#    #+#             */
-/*   Updated: 2022/04/05 17:38:11 by antoine          ###   ########.fr       */
+/*   Created: 2022/04/05 16:54:38 by antoine           #+#    #+#             */
+/*   Updated: 2022/04/07 18:29:37 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-char	ft_check_spec(char c)
+int	ft_putunbr_len(unsigned int n)
 {
-	if (c == 'c' || c == 's' || c == 'p' || c == 'd' || c == 'i'
-		|| c == 'u' || c == 'x' || c == 'X' || c == '%')
-		return (c);
-	return (0);
+    static int i;
+
+	if (n > 9)
+    {
+		ft_putunbr_len(n / 10);
+        i++;
+    }
+	ft_putchar(n % 10 + '0');
+    return (i);
 }

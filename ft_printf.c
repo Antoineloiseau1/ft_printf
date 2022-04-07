@@ -6,7 +6,7 @@
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 16:24:06 by anloisea          #+#    #+#             */
-/*   Updated: 2022/04/06 19:04:54 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/04/07 18:28:13 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int	ft_printf(const char *format, ...)
 {
 	va_list		args;
-	int		i;
-	int		len;
+	int			i;
+	int			len;
 
 	i = 0;
 	len = 0;

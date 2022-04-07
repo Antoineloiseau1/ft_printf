@@ -6,7 +6,7 @@
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 09:44:30 by anloisea          #+#    #+#             */
-/*   Updated: 2022/04/06 18:55:12 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/04/07 18:56:54 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,13 +67,14 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 int		ft_putchar_len(char c);
-int		ft_putstrlen(char *str);
+int		ft_putstr_len(char *str);
 void	ft_putchar(char c);
 void	ft_putnbr(int n);
 void	ft_putstr(char *str);
 void	ft_putunbr(unsigned int n);
 int		ft_putnbr_len(int n);
-int		ft_putunbrlen(unsigned int n);
-int		ft_putnbr_hexax_len(unsigned int n, char c);
+int		ft_putunbr_len(unsigned int n);
+int		ft_puthexa_len(unsigned int n, char c);
+int 	ft_putmem_len(unsigned long int mem);
 
 #endif

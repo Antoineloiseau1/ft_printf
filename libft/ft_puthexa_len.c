@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_puthexa_len.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/03 17:00:44 by anloisea          #+#    #+#             */
-/*   Updated: 2022/04/07 19:00:10 by anloisea         ###   ########.fr       */
+/*   Created: 2022/04/06 11:46:05 by antoine           #+#    #+#             */
+/*   Updated: 2022/04/07 18:47:26 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-#define INT_MAX 2147483647
-#define INT_MIN -2147483647
-#define LONG_MAX 2147483647
-#define LONG_MIN -2147483647
-#define ULONG_MAX 4294967295
-
-
-int	main(void)
+int	ft_puthexa_len(unsigned int n, char c)
 {
-	int*ptr;
-	int c;
-
-	ptr = &c;
-	int	a = ft_printf("%p\n", ptr);
-	int b =printf("%p\n", ptr);
-	printf("ma fonction renvoie %d\nla fonction normale renvoie %d\n",a ,b);
-	c = 1;
-	return (0);
+	static int	count;
+	char		*base;
+	
+	if (c == 'x')
+		base = "0123456789abcdef";
+	if (c == 'X')
+		base = "0123456789ABCDEF";
+	if (n > 15)
+		ft_puthexa_len(n / 16, c);
+	count += ft_putchar_len(base[n % 16]);
+	return (count);
 }

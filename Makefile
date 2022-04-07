@@ -3,18 +3,18 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: antoine <antoine@student.42.fr>            +#+  +:+       +#+         #
+#    By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/03 15:16:13 by anloisea          #+#    #+#              #
-#    Updated: 2022/04/06 12:06:11 by antoine          ###   ########.fr        #
+#    Updated: 2022/04/07 17:49:10 by anloisea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= libftprintf.a
 
-SRCS	= ft_printf.c ft_check_spec.c ft_cases.c ./libft/ft_putchar_len.c main.c ./libft/ft_putstrlen.c \
+SRCS	= ft_printf.c ft_cases.c ./libft/ft_putchar_len.c main.c ./libft/ft_putstr_len.c \
 		  ./libft/ft_strlen.c ./libft/ft_putnbr.c ./libft/ft_putunbr.c ./libft/ft_putchar.c ./libft/ft_putnbr_len.c \
-		  ./libft/ft_putunbrlen.c ./libft/ft_putnbr_hexax_len.c
+		  ./libft/ft_putunbr_len.c ./libft/ft_puthexa_len.c ./libft/ft_putmem_len.c
 
 OBJS	= ${SRCS:.c=.o}
 
