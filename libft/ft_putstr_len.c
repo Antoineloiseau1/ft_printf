@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstrlen.c                                     :+:      :+:    :+:   */
+/*   ft_putstr_len.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 19:24:01 by anloisea          #+#    #+#             */
-/*   Updated: 2022/04/07 17:30:11 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/04/08 11:50:13 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putstr_len(char *str)
+void	ft_putstr_len(char *str, int *len)
 {
 	int	i;
 
@@ -20,12 +20,12 @@ int	ft_putstr_len(char *str)
 	if (!str)
 	{
 		write(1, "(null)", ft_strlen("(null)"));
-		return (ft_strlen("(null)"));
+		(*len) += ft_strlen("(null)");
+		return ;
 	}
 	while (str[i])
 	{
-		write(1, &str[i], 1);
+		ft_putchar_len(str[i], len);
 		i++;
 	}
-	return (i);
 }

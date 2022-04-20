@@ -6,14 +6,14 @@
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 19:17:00 by anloisea          #+#    #+#             */
-/*   Updated: 2022/04/07 18:27:50 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/04/08 11:28:33 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putchar_len(char c)
+void	ft_putchar_len(char c, int *len)
 {
 	write(1, &c, 1);
-	return (1);
+	(*len)++;
 }

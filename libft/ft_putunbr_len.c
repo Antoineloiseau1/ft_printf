@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putunbrlen.c                                    :+:      :+:    :+:   */
+/*   ft_putunbr_len.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 16:54:38 by antoine           #+#    #+#             */
-/*   Updated: 2022/04/07 18:29:37 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/04/08 13:18:15 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putunbr_len(unsigned int n)
+void	ft_putunbr_len(unsigned int n, int *len)
 {
-    static int i;
-
 	if (n > 9)
-    {
-		ft_putunbr_len(n / 10);
-        i++;
-    }
-	ft_putchar(n % 10 + '0');
-    return (i);
+		ft_putunbr_len(n / 10, len);
+	ft_putchar_len(n % 10 + '0', len);
 }

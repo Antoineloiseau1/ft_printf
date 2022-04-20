@@ -6,11 +6,32 @@
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 16:24:06 by anloisea          #+#    #+#             */
-/*   Updated: 2022/04/07 18:28:13 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/04/08 13:21:34 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+void	ft_cases(char c, va_list args, int *len)
+{
+	if (c == 'c')
+		ft_putchar_len(va_arg(args, int), len);
+	if (c == 's')
+		ft_putstr_len(va_arg(args, char *), len);
+	if (c == 'p')
+	{
+		ft_putstr_len("0x", len);
+		ft_putmem_len(va_arg(args, unsigned long int), len);
+	}
+	if (c == 'd' || c == 'i')
+		ft_putnbr_len(va_arg(args, int), len);
+	if (c == 'u')
+		ft_putunbr_len(va_arg(args, unsigned int), len);
+	if (c == 'x' || c == 'X')
+		ft_puthexa_len(va_arg(args, unsigned int), c, len);
+	if (c == '%')
+		ft_putchar_len('%', len);
+}
 
 int	ft_printf(const char *format, ...)
 {
@@ -25,11 +46,11 @@ int	ft_printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			len += ft_cases(format[i + 1], args);
+			ft_cases(format[i + 1], args, &len);
 			i++;
 		}
 		else
-			len += ft_putchar_len(format[i]);
+			ft_putchar_len(format[i], &len);
 		i++;
 	}
 	va_end(args);

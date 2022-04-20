@@ -5,46 +5,44 @@
 #                                                     +:+ +:+         +:+      #
 #    By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/04/03 15:16:13 by anloisea          #+#    #+#              #
-#    Updated: 2022/04/08 18:08:41 by anloisea         ###   ########.fr        #
+#    Created: 2022/04/08 13:31:33 by anloisea          #+#    #+#              #
+#    Updated: 2022/04/08 13:36:48 by anloisea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= libftprintf.a
+NAME    = libft.a
 
-SRCS	= 	ft_printf.c \
-			./libft/ft_putchar_len.c \
-			./libft/ft_putstr_len.c \
-			./libft/ft_strlen.c \
-			./libft/ft_putunbr.c \
-			./libft/ft_putnbr_len.c \
-		  	./libft/ft_putunbr_len.c \
-		  	./libft/ft_puthexa_len.c \
-		  	./libft/ft_putmem_len.c
+SRCS    = 	ft_putchar_len.c \
+			ft_putstr_len.c \
+		  	ft_strlen.c \
+			ft_putunbr.c \
+			ft_putnbr_len.c \
+		  	ft_putunbr_len.c \
+		  	ft_puthexa_len.c \
+			ft_putmem_len.c
 
-OBJS	= ${SRCS:.c=.o}
+OBJS    = ${SRCS:.c=.o}
 
-HDR	= ft_printf.h
+HDR     = libft.h
 
-CC		= gcc
+CC      = gcc
 
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS  = -Wall -Wextra -Werror
 
 .c.o:
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-all:		${NAME}
+all:            ${NAME}
 
-${NAME}: 	${OBJS}
+${NAME}:        ${OBJS}
 	ar rc ${NAME} ${OBJS} ${HDR}
 
-
-clean:
+clean :
 	rm -f ${OBJS}
 
-fclean: 	clean
+fclean:         clean
 	rm -f ${NAME}
 
-re: 		fclean all
+re:     		clean all
 
-.PHONY: all clean fclean re
+.PHONY: 		re all clean fclean
